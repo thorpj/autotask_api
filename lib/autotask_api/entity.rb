@@ -22,8 +22,8 @@ module AutotaskAPI
     end
 
     def self.find(id, field = 'id')
-      self.find_cache ||= {}
-      find_cache[id] ||= find_all(id, field).first
+      self.find_cache = {}
+      find_cache[id] = find_all(id, field).first
     end
 
     def self.find_all(id, field = 'id')
